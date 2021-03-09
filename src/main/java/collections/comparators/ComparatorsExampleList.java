@@ -1,0 +1,49 @@
+package collections.comparators;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class ComparatorsExampleList {
+    public static void main(String[] args) {
+        List<Estudante> estudantes = new ArrayList<>();
+
+        estudantes.add(new Estudante("Pedro", 19));
+        estudantes.add(new Estudante("Carlos", 23));
+        estudantes.add(new Estudante("Mariana", 21));
+        estudantes.add(new Estudante("João", 18));
+        estudantes.add(new Estudante("Thiago", 20));
+        estudantes.add(new Estudante("George", 22));
+        estudantes.add(new Estudante("Larrisa", 21));
+
+        System.out.println("--- ordem de inserção ---");
+        System.out.println(estudantes);
+
+        System.out.println("--- ordem natural dos números - idade ---");
+        estudantes.sort((first, second) -> first.getIdade() - second.getIdade());//expressão lambda
+        System.out.println(estudantes);
+
+        System.out.println("--- ordem reversa dos números - idade ---");
+        estudantes.sort((first, second) -> second.getIdade() - first.getIdade());
+        System.out.println(estudantes);
+
+
+        System.out.println("--- ordem reversa dos números - idade  (method reference) ---");
+        estudantes.sort(Comparator.comparingInt(Estudante::getIdade));
+        System.out.println(estudantes);
+
+        System.out.println("--- ordem reversa dos números - idade  (method reference) ---");
+        estudantes.sort(Comparator.comparingInt(Estudante::getIdade).reversed());
+        System.out.println(estudantes);
+
+        System.out.println("--- ordem natural dos números - idade (interface Comparable)");
+        Collections.sort(estudantes);//Precisa apenas passar uma lista de objetos que imlementem a interface Comparable
+        System.out.println(estudantes);
+
+        System.out.println("--- ordem reversa dos números - idade (interface Comparator) ---");
+        Collections.sort(estudantes, new EstudanteOrdemIdadeReversaComparator());// Desse modo não é necessario implementar a interface Comparator ou Comparable
+        System.out.println(estudantes);
+
+    }
+}
