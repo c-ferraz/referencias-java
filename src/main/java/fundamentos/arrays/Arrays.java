@@ -55,13 +55,5 @@ public class Arrays {
             contador++; //incrementa +1 ao contador a cada iteração do laço
         }
         System.out.println();
-
-        // Também é possivel criar um array misto criando um array do tipo Object
-        Object[] arrayGenerico = new Object[5];
-        arrayGenerico[1] = "Valor String";
-        arrayGenerico[2] = 5;
-        arrayGenerico[3] = 2.4f;
-
-
     }
 }
