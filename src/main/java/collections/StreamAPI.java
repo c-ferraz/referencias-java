@@ -8,7 +8,7 @@ import java.util.stream.*;
 public class StreamAPI {
     public static void main(String[] args) {
         //ExemploStreamAPI();
-        AtividadeStreamAPI();
+        //AtividadeStreamAPI();
         //DobraOsNumeros(5,6,8,10,22);
 
     }
@@ -92,6 +92,12 @@ public class StreamAPI {
         //.collect(collectors.toSet())); //retorna um set
         //.collect(Collectors.groupingBy ( estudante -> estudante.substring(estudante.indexOf("-") + 1))));
         //groupingBy é um agrupamento que funciona similar ao agrupamento do SQL
+
+        System.out.println();
+        String exemploString = "Isso é\num exemplo\nde String\ncom varias\nlinhas.";
+        System.out.println(exemploString.lines().filter(s -> s.contains("String")).collect(Collectors.joining()));
+        // O método lines() retorna um stream de todas as linhas da string
+        // Assim podemos facilmente filtrar o conteudo das linhas de uma string
 
 
     }

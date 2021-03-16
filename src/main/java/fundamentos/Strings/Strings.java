@@ -141,5 +141,7 @@ public class Strings {
         exemploString = exemploString.replace('a', 'O'); // Trocando todas as ocorrencias da letra a minúscula pela letra O maiúscula
         System.out.println("Troca de String3: " + exemploString);
 
+        // Podemos também repetir uma string n vezes usando o método repeat()
+        System.out.println("Esse texto vai repetir 5x. ".repeat(5));
     }
 }
