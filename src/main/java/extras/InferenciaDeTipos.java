@@ -1,5 +1,7 @@
 package extras;
 
+import java.util.function.Function;
+
 public class InferenciaDeTipos {
     public static void main(String[] args) {
         // Inferencia de variaveis usando a keyword var
@@ -16,6 +18,10 @@ public class InferenciaDeTipos {
 
         System.out.println(pessoa.toString());
         System.out.println(pessoa2.toString());
+
+        // var também pode ser usado dentro de expressões lambda
+        Function<Integer, Double> dividirPor2 = (var numero) -> numero/2.0;
+        System.out.println(dividirPor2.apply(15));
     }
 
     /*
