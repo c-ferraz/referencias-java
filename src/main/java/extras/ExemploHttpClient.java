@@ -18,6 +18,7 @@ public class ExemploHttpClient {
                 .GET().uri(URI.create("https://docs.oracle.com/javase/10/language/"))
                 .build();
 
+
         HttpClient httpClient = HttpClient.newHttpClient();
 
         HttpResponse response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
